@@ -16,6 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with OsmSharp. If not, see <http://www.gnu.org/licenses/>.
 
+// 20.05.2014 - Commented excess reading of tags, way nodes and relation members
+
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
@@ -261,14 +263,14 @@ namespace OsmSharp.Data.SQLite.Osm.Streams
                 {
                     _relationReader.Close();
                 }
-                if (!_relationTagReader.IsClosed && !_relationTagReader.Read())
-                {
-                    _relationTagReader.Close();
-                }
-                if (!_relationMemberReader.IsClosed && !_relationMemberReader.Read())
-                {
-                    _relationMemberReader.Close();
-                }
+                //if (!_relationTagReader.IsClosed && !_relationTagReader.Read())
+                //{
+                //    _relationTagReader.Close();
+                //}
+                //if (!_relationMemberReader.IsClosed && !_relationMemberReader.Read())
+                //{
+                //    _relationMemberReader.Close();
+                //}
                 return true;
             }
             else
@@ -442,14 +444,14 @@ namespace OsmSharp.Data.SQLite.Osm.Streams
                 {
                     _wayReader.Close();
                 }
-                if (!_wayTagReader.IsClosed && !_wayTagReader.Read())
-                {
-                    _wayTagReader.Close();
-                }
-                if (!_wayNodeReader.IsClosed && !_wayNodeReader.Read())
-                {
-                    _wayNodeReader.Close();
-                }
+                //if (!_wayTagReader.IsClosed && !_wayTagReader.Read())
+                //{
+                //    _wayTagReader.Close();
+                //}
+                //if (!_wayNodeReader.IsClosed && !_wayNodeReader.Read())
+                //{
+                //    _wayNodeReader.Close();
+                //}
                 return true;
             }
             else
